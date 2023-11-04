@@ -1,11 +1,18 @@
+import { useState } from 'react'
 import './FollowCard.css'
 
-export function FollowCard({ formattedUserName, userName, name, isFollowing }) {
+export function FollowCard({ formattedUserName, userName, name }) {
+    const [ isFollowing, setIsFollowing ] = useState(false)
+
     const avatarSrcImage = `https://unavatar.io/${userName}`
     const avatarImageAlt = `El avatar de ${userName}`
 
     const text = isFollowing ? "Siguiendo" : "Seguir"
     
+    const handleClick = () => {
+        setIsFollowing(!isFollowing)
+    }
+
     return (
         <article className='followCard'>
             <header className='followCard-header'>
@@ -19,7 +26,7 @@ export function FollowCard({ formattedUserName, userName, name, isFollowing }) {
             </header>
 
             <aside>
-                <button className='followCard-button'>
+                <button className='followCard-button' onClick={handleClick}>
                 {text}
                 </button>
             </aside>

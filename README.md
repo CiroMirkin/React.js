@@ -130,3 +130,25 @@ export function FollowCard({ formatUserName, userName }) {
     )
 }
 ```
+
+### useState - Estado interno en un componente
+
+```jsx
+import { useState } from 'react'
+
+export function FollowCard(props) {
+    const [ isFollowing, setIsFollowing ] = useState(false)
+
+    const text = isFollowing ? "Siguiendo" : "Seguir"
+    
+    const handleClick = () => {
+        setIsFollowing(!isFollowing)
+    }
+
+    return (
+        <button className='followCard-button' onClick={handleClick}>
+            {text}
+        </button>
+    )
+}
+```
