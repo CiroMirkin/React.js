@@ -1,6 +1,6 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.followCardContainer {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }

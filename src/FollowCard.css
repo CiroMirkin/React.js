@@ -1,0 +1,19 @@
+.followCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 12rem;
+    max-width: 16rem;
+}
+.followCard-header {
+    display: flex;
+
+}
+.followCard-info {
+    display: flex;
+    flex-direction: column;
+}
+.followCard-avatar {
+    width: 30px;
+    height: 30px;
+}
