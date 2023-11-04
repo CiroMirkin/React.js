@@ -36,6 +36,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 )
 ```
 
+### Comentarios en JSX
+
+```jsx
+<>
+    {/* Comentario */}
+</>
+```
+
 ### Estilos en linea
 
 ```jsx
@@ -140,6 +148,31 @@ import { useState } from 'react'
 
 export function FollowCard(props) {
     const [ isFollowing, setIsFollowing ] = useState(false)
+
+    const text = isFollowing ? "Siguiendo" : "Seguir"
+    
+    const handleClick = () => {
+        setIsFollowing(!isFollowing)
+    }
+
+    return (
+        <button className='followCard-button' onClick={handleClick}>
+            {text}
+        </button>
+    )
+}
+```
+
+**Puedes** inicializar un *state* con un *prop*, no se pueden llamar igual y es por eso que se suele usar el prefijo *initial* (inicial).
+
+* Un estado en el padre se pasa como prop a un hijo y el hijo lo usa para inicializar su propio estado. <br>
+    Al cambiar el estado en el padre no va a cambiar el estado en el hijo, **los estados se inicializan una sola vez**. 
+
+```jsx
+import { useState } from 'react'
+
+export function FollowCard({ initialIsFollowing}) {
+    const [ isFollowing, setIsFollowing ] = useState(initialIsFollowing)
 
     const text = isFollowing ? "Siguiendo" : "Seguir"
     
