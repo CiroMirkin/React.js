@@ -4,12 +4,34 @@ import { FollowCard } from './FollowCard'
 function App() {
     const formattedUserName = (userName) => <span>@{userName}</span>
 
+    const users = [
+        {
+            userName: "react",
+            name: "React.js"
+        },
+        {
+            userName: "midudev",
+            name: "Miguel Ángel Duran"
+        },
+        {
+            userName:"freecodecamp",
+            name:"Free Code Camp"
+        }
+    ]
+
     return (
         <>
             <section className='followCardContainer'>
-                <FollowCard formattedUserName={formattedUserName("react")} userName="react" name="React.js" />
-                <FollowCard formattedUserName={formattedUserName("midudev")} userName="midudev" name="Miguel Ángel Duran"  />
-                <FollowCard formattedUserName={formattedUserName("freecodecamp")} userName="freecodecamp" name="Free Code Camp"  />
+                {
+                    users.map(({ userName, name }) => (
+                        <FollowCard 
+                            key={userName} 
+                            formattedUserName={formattedUserName(userName)} 
+                            userName={userName} 
+                            name={name}  
+                        />
+                    ))
+                }
             </section>
         </>
     )

@@ -6,6 +6,8 @@ Para correr el servidor de desarrollo:
 npm run dev
 ```
 
+El servidor esta en el puerto [5173](http://localhost:5173/).
+
 ## Docs
 
 * Las *Props* deberian ser inmutables, es una buena practica.
@@ -139,6 +141,43 @@ export function FollowCard({ formatUserName, userName }) {
         <span className='followCard-infoUserName'>{formatUserName(userName)}</span>
     )
 }
+```
+
+### Renderizar una lista de elementos
+
+```jsx
+const users = [
+    {
+        userName: "react",
+        name: "React.js"
+    },
+    {
+        userName: "midudev",
+        name: "Miguel Ángel Duran"
+    },
+    {
+        userName:"freecodecamp",
+        name:"Free Code Camp"
+    }
+]
+```
+
+* Usar como *key* el index de un elemento solo si sabes que ese inde no va a cambiar, osea que el elemento siempre estara en el mismo sitio. <br>
+Un *uuid* solo tiene sentido si se han establecido anteriormente, cada vez que se renderizen deben ser los mismos id.
+
+```jsx
+<section className='followCardContainer'>
+    {
+        users.map(({ userName, name }) => (
+            <FollowCard 
+                key={userName} 
+                formattedUserName={formattedUserName(userName)} 
+                userName={userName} 
+                name={name}  
+            />
+        ))
+    }
+</section>
 ```
 
 ### useState - Estado interno en un componente
