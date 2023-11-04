@@ -94,7 +94,7 @@ export function FollowCard({ name="No hay un nombre" }) {
 }
 ```
 
-## children
+### children
 
 * Es una pabra reservada.
 
