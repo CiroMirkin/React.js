@@ -1,6 +1,18 @@
+:root {
+    width: auto;
+    height: auto;
+    display: grid;
+    place-items: center;
+}
+
 .followCardContainer {
+    max-width: 550px;
     padding: 2.5rem;
+    margin: 2rem;
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+    border-radius: .125rem;
+    background-color: #2b2a2a;
 }
