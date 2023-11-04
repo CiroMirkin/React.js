@@ -8,11 +8,13 @@ npm run dev
 
 ## Docs
 
-* Las *Props* son inmutables.
+* Las *Props* deberian ser inmutables, es una buena practica.
 
 * Entre { } se intruducen sentencias que retornan un valor.
 
-### Primer componente:
+* Un componente retorna un elemento, React renderiza un elemento no un componente.
+
+### Primer componente
 
 ```jsx
 const IconButton = ({text}) => {
@@ -34,7 +36,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 )
 ```
 
-### Estilos en linea:
+### Estilos en linea
 
 ```jsx
 <button style={{color: "#000099"}}>Seguir</button>
@@ -48,7 +50,7 @@ const avatarSrcImage = `https://unavatar.io/${userName}`
 <img className='followCard-avatar' src={avatarSrcImage} alt={`El avatar de ${userName}`} />
 ```
 
-### Parametro Booleano:
+### Parametro Booleano
 
 ```jsx
 <>
@@ -60,7 +62,7 @@ const avatarSrcImage = `https://unavatar.io/${userName}`
 
 Por defecto es *True*.
 
-### Elemento como parametro:
+### Elemento como parametro
 
 ```jsx
 function App() {
@@ -111,7 +113,7 @@ export function FollowCard({ children }) {
 }
 ```
 
-### Callbacks:
+### Callbacks
 
 ```jsx
 function App() {
